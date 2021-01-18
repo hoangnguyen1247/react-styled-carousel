@@ -1,33 +1,27 @@
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-const RightArrow = styled.button`
-  color: #000;
-  position: absolute;
-  margin-left: 2px;
-  margin-top: 11px;
-  width: 16px;
-  height: 1px;
-  background-color: ${({ disabled }) => disabled ? '#B2B2B2' : '#000000'};
-  right: 0px;
-  top: calc(50% - 5px);
-  border: 0;
-  cursor: ${({ disabled }) => disabled ? 'not-allowed' : 'pointer'};
-  outline: none;
-  :before {
-    content: '';
+const RightArrowWrapper = styled.div`
     position: absolute;
-    right: 1px;
-    top: -5px;
-    width: 10px;
-    height: 10px;
-    border-top: solid 2px ${({ disabled }) => disabled ? '#B2B2B2' : '#000000'};
-    border-right: solid 2px ${({ disabled }) => disabled ? '#B2B2B2' : '#000000'};
-    transform: rotate(45deg);
-  }
-  :after {
-    content: '';
-    position: absolute;
-  }
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: inline-flex;
+    z-index: 1;
+    align-items: center;
 `;
+
+const RightArrowButton = styled.button`
+    background-color: ${({ disabled }) => disabled ? '#B2B2B2' : '#000000' };
+    cursor: ${({ disabled }) => disabled ? "not-allowed" : "pointer" };
+`;
+
+const RightArrow = ({ onClick, disabled }) => {
+    return (
+      <RightArrowWrapper>
+        <RightArrowButton onClick={onClick} disabled={disabled}>Right</RightArrowButton>
+      </RightArrowWrapper>
+    )
+}
 
 export default RightArrow;

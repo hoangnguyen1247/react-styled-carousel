@@ -2,6 +2,8 @@ import React from 'react';
 import { hot } from 'react-hot-loader';
 import { Slider, Container } from 'react-styled-carousel';
 
+import { LeftArrow } from "./LeftArrow";
+import { RightArrow } from "./RightArrow";
 import ExampleCard from './ExampleCard';
 
 const responsive = [
@@ -16,6 +18,8 @@ const Root = () => (
       responsive={responsive}
       autoSlide={false}
       infinite={false}
+      // LeftArrow={LeftArrow}
+      // RightArrow={RightArrow}
     >
       <ExampleCard>1</ExampleCard>
       <ExampleCard>2</ExampleCard>

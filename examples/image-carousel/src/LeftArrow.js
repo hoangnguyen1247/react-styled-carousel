@@ -16,12 +16,10 @@ const LeftArrowButton = styled.button`
     cursor: ${({ disabled }) => disabled ? "not-allowed" : "pointer" };
 `;
 
-const LeftArrow = ({ onClick, disabled }) => {
+export const LeftArrow = ({ onClick, disabled }) => {
     return (
       <LeftArrowWrapper>
         <LeftArrowButton onClick={onClick} disabled={disabled} >Left</LeftArrowButton>
       </LeftArrowWrapper>
     )
 }
-
-export default LeftArrow;

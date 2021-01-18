@@ -1,27 +1,25 @@
 import React from "react";
 import styled from "styled-components";
 
-const LeftArrowWrapper = styled.div`
+const RightArrowWrapper = styled.div`
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 0;
+    right: 0;
     display: inline-flex;
     z-index: 1;
     align-items: center;
 `;
 
-const LeftArrowButton = styled.button`
+const RightArrowButton = styled.button`
     background-color: ${({ disabled }) => disabled ? '#B2B2B2' : '#000000' };
     cursor: ${({ disabled }) => disabled ? "not-allowed" : "pointer" };
 `;
 
-const LeftArrow = ({ onClick, disabled }) => {
+export const RightArrow = ({ onClick, disabled }) => {
     return (
-      <LeftArrowWrapper>
-        <LeftArrowButton onClick={onClick} disabled={disabled} >Left</LeftArrowButton>
-      </LeftArrowWrapper>
+      <RightArrowWrapper>
+        <RightArrowButton onClick={onClick} disabled={disabled}>Right</RightArrowButton>
+      </RightArrowWrapper>
     )
 }
-
-export default LeftArrow;

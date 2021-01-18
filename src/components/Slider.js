@@ -162,7 +162,9 @@ class Slider extends React.Component {
   renderLeftArrow() {
     const { LeftArrow, infinite } = this.props;
     const { initialCard } = this.state;
-    return React.cloneElement(LeftArrow, {
+
+    const LeftArrowToRender = LeftArrow ? LeftArrow : DefaultLeftArrow;
+    return LeftArrowToRender({
       onClick: this.handleLeftArrowClick,
       disabled: !infinite && !initialCard,
     });
@@ -172,7 +174,9 @@ class Slider extends React.Component {
     const { RightArrow, children, infinite } = this.props;
     const numberOfChildren = children ? children.length || 1 : 0;
     const { initialCard, cardsToShow } = this.state;
-    return React.cloneElement(RightArrow, {
+
+    const RightArrowToRender = RightArrow ? RightArrow : DefaultRightArrow;
+    return RightArrowToRender({
       onClick: this.handleRightArrowClick,
       disabled: !infinite && (initialCard + cardsToShow === numberOfChildren),
     });
@@ -211,8 +215,6 @@ class Slider extends React.Component {
 Slider.defaultProps = {
   showDots: true,
   showArrows: true,
-  LeftArrow: <DefaultLeftArrow />,
-  RightArrow: <DefaultRightArrow />,
   Dot: <DefaultDot />,
   DotsWrapper: DefaultDotsWrapper,
   cardsToShow: null,
