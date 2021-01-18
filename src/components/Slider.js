@@ -222,7 +222,7 @@ Slider.defaultProps = {
   responsive: null,
   autoSlide: 2000,
   pauseOnMouseOver: true,
-  padding: '0px 20px',
+  padding: '0px 0px',
   margin: '0px',
   hideArrowsOnNoSlides: true,
 };
